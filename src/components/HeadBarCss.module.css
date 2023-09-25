@@ -1,0 +1,14 @@
+.navLinks {
+  padding-right: 1.125rem !important;
+  padding-left: 1.125rem !important;
+  line-height: 1.5;
+  color: #fff !important;
+  position: relative;
+}
+
+.navImg {
+  padding-right: 1.125rem !important;
+  padding-left: 1.125rem !important;
+  height: 6vh;
+  width: auto;
+}
