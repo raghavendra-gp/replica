@@ -1,0 +1,15 @@
+.org {
+  padding: 0;
+  margin: 5px;
+  border: 3px solid #ff5722; /* Lighter shade of orange */
+  background: none; /* Remove default background */
+}
+
+.grn {
+  /* size: 10px; */
+  margin: 5px;
+  border: 3px solid #004d00; /* Lighter shade of green */
+  background: none; /* Remove default background */
+  padding: 0;
+  /* acolor: #034c29; */
+}

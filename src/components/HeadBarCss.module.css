@@ -12,3 +12,10 @@
   height: 6vh;
   width: auto;
 }
+
+.flag_video {
+  display: flex;
+  justify-content: center;
+  height: 40vh;
+  border-radius: 5px;
+}
