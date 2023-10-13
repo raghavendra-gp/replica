@@ -81,3 +81,21 @@
   text-align: left;
   text-align: initial;
 }
+
+.title {
+  font-family: "Cedarville Cursive", cursive;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3rem;
+  align-items: center;
+  text-align: center;
+  color: #e9b820;
+}
+
+.title_para {
+  font-family: "Sofia Sans Condensed", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #3c2400;
+}

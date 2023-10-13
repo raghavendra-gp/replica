@@ -1,15 +1,39 @@
 import React, { Fragment } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import SubContentCss from "./MainContentCss.module.css";
+import { FileUpload } from "primereact/fileupload";
 
 const SubContent = () => {
   return (
     <Fragment>
-      <div style={{ paddingTop: "5%" }}>
-        <Container fluid className="py-5">
-          <Row className="justify-content-center">
-            <Col sm={12} md={8} lg={6}>
-              <iframe
+      <div>
+        <Container className="py-5">
+          <div className="text-center">
+            <h2 className={`${SubContentCss.title}`}>
+              Letter of Compassionate
+            </h2>
+
+            <p className={`${SubContentCss.title_para}`}>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
+              consequatur labore, incidunt ea nisi voluptatum alias eos magni
+              id! In repudiandae, maxime, at quod blanditiis saepe temporibus
+              reiciendis distinctio porro eius dolorum dolor architecto soluta
+              quaerat error debitis recusandae dignissimos molestiae explicabo
+              harum culpa. Recusandae eveniet, ab deleniti dicta nulla iure sint
+              dolores nesciunt similique perspiciatis animi consequatur beatae
+              provident aut, in, facilis et inventore repudiandae eius
+              accusamus. Quasi ullam reiciendis consequatur quis facilis, natus
+              quisquam eaque qui soluta earum. Ipsa consequuntur officia iste.
+              Dicta quos dolorem numquam sequi quia alias eligendi iste,
+              incidunt molestias harum at quis aliquid dolores.
+            </p>
+          </div>
+        </Container>
+        <Container>
+          <hr />
+        </Container>
+
+        {/* <iframe
                 width="100%"
                 height="400px"
                 src="https://www.youtube.com/embed/J3usOwPYRbA?si=CK3bh4fpUhbXfAz5"
@@ -18,9 +42,25 @@ const SubContent = () => {
                 allowFullScreen
                 className={SubContentCss.videoIframe}
                 style={{ borderRadius: "10px" }}
-              ></iframe>
-            </Col>
-          </Row>
+              ></iframe> */}
+        {/* </Col> */}
+        <Container className="py-5">
+          <div className="text-center">
+            <h2 className={`${SubContentCss.title_para}`}>
+              Your Compassionate
+            </h2>
+            <div className="text-center">
+              <input
+                type="file"
+                name="Choose"
+                id=""
+                style={{ padding: "8px" }}
+              />
+            </div>
+          </div>
+        </Container>
+        <Container>
+          <hr />
         </Container>
         <Container>
           <Row className="py-5">

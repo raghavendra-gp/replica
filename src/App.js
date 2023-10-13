@@ -1,19 +1,27 @@
 import "./App.css";
+import CarouselPage from "./components/CarouselPage";
 import Footer from "./components/Footer";
 import HeadBar from "./components/HeadBar";
 import MainContent from "./components/MainContent";
+import Selfi from "./components/Selfi";
 import SubContent from "./components/SubContent";
 
 function App() {
   return (
     <div className="App">
-      <div className="main_background">
+      <div>
         <HeadBar />
-        <MainContent />
+        <CarouselPage />
+        {/* <MainContent /> */}
       </div>
       <SubContent />
       <Footer />
     </div>
+
+    // selfi page
+    // <div className="App">
+    //   {/* <Selfi /> */}
+    // </div>
   );
 }
 
