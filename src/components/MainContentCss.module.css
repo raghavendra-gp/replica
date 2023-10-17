@@ -86,16 +86,59 @@
   font-family: "Cedarville Cursive", cursive;
   font-style: normal;
   font-weight: 500;
-  font-size: 3rem;
+  font-size: 7vh;
   align-items: center;
   text-align: center;
-  color: #e9b820;
+  /* color: #e9b820; */
+  color: #468b97;
 }
 
 .title_para {
-  font-family: "Sofia Sans Condensed", sans-serif;
+  /* font-family: "Sofia Sans Condensed", sans-serif; */
   font-style: normal;
-  font-weight: 300;
-  font-size: 1.5rem;
+  font-weight: 400;
+  font-size: 3vh;
   color: #3c2400;
+}
+
+.saffron {
+  height: 18vh;
+  background-color: #ff5722;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.white {
+  height: 30vh;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.green {
+  height: 18vh;
+  background-color: #004d00;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.uploadBox {
+  display: none;
+}
+
+.uploadLabel {
+  padding: 60%;
+  background-color: blue;
+  color: #fff;
+  border-radius: 50%;
+  border: 6px dotted white;
+  cursor: pointer;
+}
+
+.card_display {
+  border: 1px solid black;
+  border-top-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  /* border-radius: 0; */
 }

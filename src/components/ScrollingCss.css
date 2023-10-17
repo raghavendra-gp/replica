@@ -1,0 +1,8 @@
+.fadeInOnScroll {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.fadeInOnScroll.fadeIn {
+  opacity: 1;
+}

@@ -5,15 +5,28 @@ import HeadBarCss from "./HeadBarCss.module.css";
 import loclogo from "./images/logo.svg";
 
 const HeadBar = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <Fragment>
       <Navbar
         expand="lg"
         data-bs-theme="dark"
-        style={{ backgroundColor: "#E9B824" }}
+        // style={{ backgroundColor: "#E9B824" }}
+        style={{ backgroundColor: "#CD5C08" }}
+        className={HeadBarCss.sticky_top}
       >
         <Navbar.Brand href="#home">
-          <img className={HeadBarCss.navImg} src={loclogo} alt="logo" />
+          <img
+            className={HeadBarCss.navImg}
+            src={loclogo}
+            alt="logo"
+            onClick={scrollToTop}
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

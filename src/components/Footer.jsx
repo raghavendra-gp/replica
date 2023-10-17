@@ -15,7 +15,7 @@ const Footer = () => {
         <Container fluid>
           <div className="d-flex justify-content-center container">
             <Row>
-              <Col xs={5}>
+              {/* <Col xs={5}>
                 <a
                   className="p-2 text-nowrap sm_font d-flex align-items-center justify-content-center"
                   href="/terms-and-conditions"
@@ -23,8 +23,8 @@ const Footer = () => {
                 >
                   Terms and Condition
                 </a>
-              </Col>
-              <Col
+              </Col> */}
+              {/* <Col
                 xs={2}
                 className="d-flex align-items-center justify-content-center"
               >
@@ -38,7 +38,7 @@ const Footer = () => {
                 >
                   Privacy Policy
                 </a>
-              </Col>
+              </Col> */}
             </Row>
           </div>
         </Container>
@@ -58,7 +58,7 @@ const Footer = () => {
                   className="p-2 text-break footer_text d-flex align-items-center justify-content-center col"
                   style={{ fontWeight: "normal", margin: "0" }}
                 >
-                  harghartiranga.com
+                  We are Indian's
                 </div>
               </div>
             </Col>

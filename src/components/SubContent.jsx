@@ -1,9 +1,30 @@
-import React, { Fragment } from "react";
-import { Container, Row, Col, Form } from "react-bootstrap";
+import React, { Fragment, useEffect } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import SubContentCss from "./MainContentCss.module.css";
-import { FileUpload } from "primereact/fileupload";
+import FileUpload from "./FileUpload";
+import "./ScrollingCss.css";
 
 const SubContent = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const elements = document.querySelectorAll(".fadeInOnScroll");
+      elements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        const offset = rect.top + rect.height * 0.2; // Adjust offset as needed
+
+        if (offset <= window.innerHeight) {
+          element.classList.add("fadeIn"); // Add your animation class here
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <Fragment>
       <div>
@@ -20,50 +41,54 @@ const SubContent = () => {
               reiciendis distinctio porro eius dolorum dolor architecto soluta
               quaerat error debitis recusandae dignissimos molestiae explicabo
               harum culpa. Recusandae eveniet, ab deleniti dicta nulla iure sint
-              dolores nesciunt similique perspiciatis animi consequatur beatae
-              provident aut, in, facilis et inventore repudiandae eius
-              accusamus. Quasi ullam reiciendis consequatur quis facilis, natus
-              quisquam eaque qui soluta earum. Ipsa consequuntur officia iste.
-              Dicta quos dolorem numquam sequi quia alias eligendi iste,
-              incidunt molestias harum at quis aliquid dolores.
+              at quod blanditiis saepe temporibus reiciendis distinctio porro
+              eius dolorum dolor architecto soluta quaerat error debitis
             </p>
           </div>
         </Container>
-        <Container>
-          <hr />
+
+        {/* -----------------------file upload----------------------------- */}
+        <Container className="py-5 fadeInOnScroll">
+          {/* <div className={`${SubContentCss.saffron}`}></div> */}
+          <FileUpload />
+          {/* <div className={`${SubContentCss.green}`}></div>   */}
         </Container>
 
-        {/* <iframe
+        {/* ----------------------end file upload--------------------------- */}
+
+        {/* /--------------------------------Example------------------------------------/ */}
+
+        <Container className="py-5 fadeInOnScroll">
+          <Row>
+            <Col sm={12} lg={6} className="d-flex align-items-center">
+              <iframe
                 width="100%"
-                height="400px"
-                src="https://www.youtube.com/embed/J3usOwPYRbA?si=CK3bh4fpUhbXfAz5"
+                height="315"
+                src="https://www.youtube.com/embed/ADfivEQV24U?si=Kcodr1UpePGRzNTw"
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                className={SubContentCss.videoIframe}
                 style={{ borderRadius: "10px" }}
-              ></iframe> */}
-        {/* </Col> */}
-        <Container className="py-5">
-          <div className="text-center">
-            <h2 className={`${SubContentCss.title_para}`}>
-              Your Compassionate
-            </h2>
-            <div className="text-center">
-              <input
-                type="file"
-                name="Choose"
-                id=""
-                style={{ padding: "8px" }}
-              />
-            </div>
-          </div>
+              ></iframe>
+            </Col>
+            <Col sm={12} lg={5} className="offset-lg-1">
+              <div className="text-center">
+                <h3 className="my-4">Har Ghar Tiranga</h3>
+                <p>
+                  The Tri-colour flag is a symbol of pride for every Indian. It
+                  represents national integrity and signifies the hopes and
+                  aspirations of the Indian people.
+                </p>
+              </div>
+            </Col>
+          </Row>
         </Container>
-        <Container>
-          <hr />
-        </Container>
-        <Container>
-          <Row className="py-5">
+
+        {/* /-----------------------------End Of Example--------------------------------/ */}
+
+        {/* /---------------------------start video and content------------------------/ */}
+        {/* <Container className="py-5">
+          <Row>
             <Col
               sm={12}
               lg={6}
@@ -74,7 +99,6 @@ const SubContent = () => {
                 height="315"
                 src="https://www.youtube.com/embed/ADfivEQV24U?si=Kcodr1UpePGRzNTw"
                 title="YouTube video player"
-                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 className={SubContentCss.videoIframe}
@@ -94,7 +118,8 @@ const SubContent = () => {
               </div>
             </Col>
           </Row>
-        </Container>
+        </Container> */}
+        {/* /---------------------------start video and content------------------------/ */}
       </div>
     </Fragment>
   );
