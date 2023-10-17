@@ -12,8 +12,10 @@ const SubContent = () => {
         const rect = element.getBoundingClientRect();
         const offset = rect.top + rect.height * 0.2; // Adjust offset as needed
 
-        if (offset <= window.innerHeight) {
+        if (offset <= window.innerHeight && offset >= 0) {
           element.classList.add("fadeIn"); // Add your animation class here
+        } else {
+          element.classList.remove("fadeIn");
         }
       });
     };
@@ -28,7 +30,7 @@ const SubContent = () => {
   return (
     <Fragment>
       <div>
-        <Container className="py-5">
+        <Container className="py-5 fadeInOnScroll">
           <div className="text-center">
             <h2 className={`${SubContentCss.title}`}>
               Letter of Compassionate
