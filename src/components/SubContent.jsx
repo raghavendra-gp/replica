@@ -10,10 +10,10 @@ const SubContent = () => {
       const elements = document.querySelectorAll(".fadeInOnScroll");
       elements.forEach((element) => {
         const rect = element.getBoundingClientRect();
-        const offset = rect.top + rect.height * 0.2; // Adjust offset as needed
+        const offset = rect.top + rect.height * 0.2;
 
         if (offset <= window.innerHeight && offset >= 0) {
-          element.classList.add("fadeIn"); // Add your animation class here
+          element.classList.add("fadeIn");
         } else {
           element.classList.remove("fadeIn");
         }
@@ -30,7 +30,7 @@ const SubContent = () => {
   return (
     <Fragment>
       <div>
-        <Container className="py-5 fadeInOnScroll">
+        <Container className="py-5">
           <div className="text-center">
             <h2 className={`${SubContentCss.title}`}>
               Letter of Compassionate
