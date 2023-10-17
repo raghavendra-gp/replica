@@ -30,6 +30,7 @@ const SubContent = () => {
   return (
     <Fragment>
       <div>
+        {/* /-----------------------About the app--------------------------/ */}
         <Container className="py-5">
           <div className="text-center">
             <h2 className={`${SubContentCss.title}`}>
@@ -48,6 +49,7 @@ const SubContent = () => {
             </p>
           </div>
         </Container>
+        {/* /-----------------------About the app end--------------------------/ */}
 
         {/* -----------------------file upload----------------------------- */}
         <Container className="py-5 fadeInOnScroll">
@@ -58,22 +60,25 @@ const SubContent = () => {
 
         {/* ----------------------end file upload--------------------------- */}
 
-        {/* /--------------------------------Example------------------------------------/ */}
-
+        {/* /---------------------------start video and content------------------------/ */}
         <Container className="py-5 fadeInOnScroll">
           <Row>
             <Col sm={12} lg={6} className="d-flex align-items-center">
               <iframe
                 width="100%"
                 height="315"
-                src="https://www.youtube.com/embed/ADfivEQV24U?si=Kcodr1UpePGRzNTw"
+                src="https://www.youtube.com/embed/ev9pf8RjjRY?si=g7BRNqxgAFTvJIf6"
                 title="YouTube video player"
+                frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
+                allowfullscreen
                 style={{ borderRadius: "10px" }}
               ></iframe>
             </Col>
-            <Col sm={12} lg={5} className="offset-lg-1">
+            <Col lg={1} className="d-none d-lg-block">
+              <div className={`${SubContentCss.vertical_line}`}></div>
+            </Col>
+            <Col sm={12} lg={5} className="d-flex align-items-center">
               <div className="text-center">
                 <h3 className="my-4">Har Ghar Tiranga</h3>
                 <p>
@@ -86,42 +91,37 @@ const SubContent = () => {
           </Row>
         </Container>
 
-        {/* /-----------------------------End Of Example--------------------------------/ */}
+        {/* /---------------------------end video and content------------------------/ */}
+        <Container>
+          <hr
+            style={{
+              border: "none",
+              height: "5px",
+              backgroundImage:
+                "linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.15))",
+            }}
+          />
+        </Container>
 
-        {/* /---------------------------start video and content------------------------/ */}
-        {/* <Container className="py-5">
-          <Row>
-            <Col
-              sm={12}
-              lg={6}
-              className={`d-flex align-items-center ${SubContentCss.flagVideo}`}
-            >
-              <iframe
-                width="100%"
-                height="315"
-                src="https://www.youtube.com/embed/ADfivEQV24U?si=Kcodr1UpePGRzNTw"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className={SubContentCss.videoIframe}
-                style={{ borderRadius: "10px" }}
-              ></iframe>
-            </Col>
-            <Col sm={12} lg={5} className="offset-lg-1">
-              <div className="text-center">
-                <h3 className={`${SubContentCss.vidTitle} my-4`}>
-                  Har Ghar Tiranga
-                </h3>
-                <p className={SubContentCss.videoText}>
-                  The Tri-colour flag is a symbol of pride for every Indian. It
-                  represents national integrity and signifies the hopes and
-                  aspirations of the Indian people.
-                </p>
-              </div>
-            </Col>
-          </Row>
-        </Container> */}
-        {/* /---------------------------start video and content------------------------/ */}
+        {/* /-------------------------------army video start------------------------------/ */}
+
+        <Container className="py-5 fadeInOnScroll">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/3t5M10gBVCc?si=_yIRk874r0IaIrf0&amp;controls=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            style={{
+              width: "80%",
+              borderRadius: "30px",
+              height: "70vh",
+            }}
+          ></iframe>
+        </Container>
+        {/* /-------------------------------army video end------------------------------/ */}
       </div>
     </Fragment>
   );
