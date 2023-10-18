@@ -1,8 +1,7 @@
 import React, { Fragment } from "react";
 import { Nav, Navbar } from "react-bootstrap";
-import HeadBarCss from "./HeadBarCss.module.css";
-
-import loclogo from "./images/logo.svg";
+import HeadBarCss from "../css/HeadBarCss.module.css";
+import logo from "../images/logo.svg";
 
 const HeadBar = () => {
   const scrollToTop = () => {
@@ -11,19 +10,20 @@ const HeadBar = () => {
       behavior: "smooth",
     });
   };
+
+  const scrollToHome = () => {};
   return (
     <Fragment>
       <Navbar
         expand="lg"
         data-bs-theme="dark"
-        // style={{ backgroundColor: "#E9B824" }}
         style={{ backgroundColor: "#CD5C08" }}
-        className={HeadBarCss.sticky_top}
+        className={`${HeadBarCss.sticky_top}`}
       >
         <Navbar.Brand href="#home">
           <img
-            className={HeadBarCss.navImg}
-            src={loclogo}
+            className={`${HeadBarCss.navImg}`}
+            src={logo}
             alt="logo"
             onClick={scrollToTop}
           />
@@ -32,10 +32,14 @@ const HeadBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <div className="d-inline-flex align-items-end ms-auto">
             <Nav className="me-auto">
-              <Nav.Link className={HeadBarCss.navLinks} href="#features">
+              <Nav.Link
+                className={`${HeadBarCss.navLinks}`}
+                href="#home"
+                onClick={scrollToTop}
+              >
                 Home
               </Nav.Link>
-              <Nav.Link className={HeadBarCss.navLinks} href="#selfies">
+              <Nav.Link className={`${HeadBarCss.navLinks}`} href="#selfies">
                 Selfies
               </Nav.Link>
             </Nav>

@@ -1,8 +1,10 @@
 import React, { Fragment, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import SubContentCss from "./MainContentCss.module.css";
+import MainCss from "../css/MainCss.module.css";
 import FileUpload from "./FileUpload";
-import "./ScrollingCss.css";
+import VerticalLine from "../reusables/VerticalLine";
+import HorizontalLine from "../reusables/HorizontalLine";
+import "../css/Scrolling.css";
 
 const SubContent = () => {
   useEffect(() => {
@@ -33,11 +35,9 @@ const SubContent = () => {
         {/* /-----------------------About the app--------------------------/ */}
         <Container className="py-5">
           <div className="text-center">
-            <h2 className={`${SubContentCss.title}`}>
-              Letter of Compassionate
-            </h2>
+            <h2 className={`${MainCss.title}`}>Letter of Compassionate</h2>
 
-            <p className={`${SubContentCss.title_para}`}>
+            <p className={`${MainCss.title_para}`}>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
               consequatur labore, incidunt ea nisi voluptatum alias eos magni
               id! In repudiandae, maxime, at quod blanditiis saepe temporibus
@@ -50,16 +50,16 @@ const SubContent = () => {
           </div>
         </Container>
         {/* /-----------------------About the app end--------------------------/ */}
-
+        <HorizontalLine />
         {/* -----------------------file upload----------------------------- */}
         <Container className="py-5 fadeInOnScroll">
-          {/* <div className={`${SubContentCss.saffron}`}></div> */}
+          {/* <div className={`${MainCss.saffron}`}></div> */}
           <FileUpload />
-          {/* <div className={`${SubContentCss.green}`}></div>   */}
+          {/* <div className={`${MainCss.green}`}></div> */}
         </Container>
 
         {/* ----------------------end file upload--------------------------- */}
-
+        <HorizontalLine />
         {/* /---------------------------start video and content------------------------/ */}
         <Container className="py-5 fadeInOnScroll">
           <Row>
@@ -75,16 +75,15 @@ const SubContent = () => {
                 style={{ borderRadius: "10px" }}
               ></iframe>
             </Col>
-            <Col lg={1} className="d-none d-lg-block">
-              <div className={`${SubContentCss.vertical_line}`}></div>
-            </Col>
+            <VerticalLine />
             <Col sm={12} lg={5} className="d-flex align-items-center">
               <div className="text-center">
-                <h3 className="my-4">Har Ghar Tiranga</h3>
+                <h3 className="my-4">Life In Army</h3>
                 <p>
-                  The Tri-colour flag is a symbol of pride for every Indian. It
-                  represents national integrity and signifies the hopes and
-                  aspirations of the Indian people.
+                  Your arms are my shelter, Assuring me that it will be better.
+                  Your hand in my comfort, Lifting me up when I fall short. Your
+                  voice make me strong, Teaching me what’s right and wrong. Your
+                  smile says it all, Father I love you more then all.
                 </p>
               </div>
             </Col>
@@ -92,17 +91,7 @@ const SubContent = () => {
         </Container>
 
         {/* /---------------------------end video and content------------------------/ */}
-        <Container>
-          <hr
-            style={{
-              border: "none",
-              height: "5px",
-              backgroundImage:
-                "linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.15))",
-            }}
-          />
-        </Container>
-
+        <HorizontalLine />
         {/* /-------------------------------army video start------------------------------/ */}
 
         <Container className="py-5 fadeInOnScroll">

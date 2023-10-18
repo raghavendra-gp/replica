@@ -1,18 +1,17 @@
-.main_background {
-  background-image: url(./components/images/thumbnail_flag.jpg);
+/* .main_background {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
   height: 100vh;
-}
+} */
 
 .App {
   text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */

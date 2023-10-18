@@ -1,10 +1,8 @@
 import "./App.css";
-import CarouselPage from "./components/CarouselPage";
-
-import Footer from "./components/Footer";
 import HeadBar from "./components/HeadBar";
-
+import CarouselPage from "./components/CarouselPage";
 import SubContent from "./components/SubContent";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -12,16 +10,11 @@ function App() {
       <div>
         <HeadBar />
         <CarouselPage />
-        {/* <MainContent /> */}
       </div>
+
       <SubContent />
       <Footer />
     </div>
-
-    // selfi page
-    // <div className="App">
-    //   {/* <Selfi /> */}
-    // </div>
   );
 }
 

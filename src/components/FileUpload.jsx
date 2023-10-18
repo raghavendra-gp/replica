@@ -4,7 +4,7 @@ import { storage } from "./Firebase";
 import { v4 } from "uuid";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import toast, { Toaster } from "react-hot-toast";
-import FileCss from "./MainContentCss.module.css";
+import MainCss from "../css/MainCss.module.css";
 
 const FileUpload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -40,7 +40,7 @@ const FileUpload = () => {
 
   return (
     <div>
-      <Card className={`${FileCss.card_display}`}>
+      <Card className={`${MainCss.card_display}`}>
         <Card.Body>
           <Card.Title>Upload Image</Card.Title>
           <Card.Text>Choose an image to upload</Card.Text>

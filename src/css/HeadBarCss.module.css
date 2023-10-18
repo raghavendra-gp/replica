@@ -6,28 +6,22 @@
   line-height: 1.5;
   color: #fff !important;
   position: relative;
-  font-size: larger;
-  font-family: "Times New Roman", Times, serif;
+  /* font-weigh; */
+  font-size: 18px !important;
+  font-family: "Sofia Sans Condensed", sans-serif !important;
 }
 
 .navImg {
   /* padding-right: 1.125rem !important;
   padding-left: 1.125rem !important; */
   margin-left: 6vh;
-  height: 6vh;
+  height: 7vh;
   width: auto;
 }
 
-.flag_video {
-  display: flex;
-  justify-content: center;
-  height: 40vh;
-  border-radius: 5px;
-}
-
 .sticky_top {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000; /* Adjust as needed */
+  position: fixed !important;
+  top: 0 !important;
+  width: 100% !important;
+  z-index: 1000 !important;
 }
