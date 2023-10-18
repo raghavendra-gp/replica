@@ -67,6 +67,7 @@ const SubContent = () => {
               <iframe
                 width="100%"
                 height="315"
+                // src="../videos/army man.mp4"
                 src="https://www.youtube.com/embed/ev9pf8RjjRY?si=g7BRNqxgAFTvJIf6"
                 title="YouTube video player"
                 frameborder="0"
@@ -74,6 +75,17 @@ const SubContent = () => {
                 allowfullscreen
                 style={{ borderRadius: "10px" }}
               ></iframe>
+              {/* <video
+                width="100%"
+                height="315"
+                controls
+                src="../videos/armyMan.mp4"
+                type="video/MP4"
+                title="My Video"
+                style={{ borderRadius: "10px" }}
+              >
+                {/* <source src="../" type="video/mp4"></source> */}
+              {/* </video> */}
             </Col>
             <VerticalLine />
             <Col sm={12} lg={5} className="d-flex align-items-center">
@@ -94,7 +106,10 @@ const SubContent = () => {
         <HorizontalLine />
         {/* /-------------------------------army video start------------------------------/ */}
 
-        <Container className="py-5 fadeInOnScroll">
+        <Container
+          className="py-5 fadeInOnScroll"
+          style={{ textAlign: "center" }}
+        >
           <iframe
             width="560"
             height="315"

@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import HeadBarCss from "../css/HeadBarCss.module.css";
 import logo from "../images/logo.svg";
+import { Link } from "react-router-dom";
 
 const HeadBar = () => {
   const scrollToTop = () => {
@@ -39,8 +40,12 @@ const HeadBar = () => {
               >
                 Home
               </Nav.Link>
-              <Nav.Link className={`${HeadBarCss.navLinks}`} href="#selfies">
-                Selfies
+              <Nav.Link
+                as={Link}
+                to="/letters"
+                className={`${HeadBarCss.navLinks}`}
+              >
+                Letters
               </Nav.Link>
             </Nav>
           </div>
