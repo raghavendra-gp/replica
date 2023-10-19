@@ -13,34 +13,7 @@ const Footer = () => {
         style={{ cursor: "default", padding: "0px", height: "40px" }}
       >
         <Container fluid>
-          <div className="d-flex justify-content-center container">
-            <Row>
-              {/* <Col xs={5}>
-                <a
-                  className="p-2 text-nowrap sm_font d-flex align-items-center justify-content-center"
-                  href="/terms-and-conditions"
-                  style={{ fontSize: "12px" }}
-                >
-                  Terms and Condition
-                </a>
-              </Col> */}
-              {/* <Col
-                xs={2}
-                className="d-flex align-items-center justify-content-center"
-              >
-                |
-              </Col>
-              <Col xs={5}>
-                <a
-                  className="p-2 text-nowrap sm_font d-flex align-items-center justify-content-center"
-                  href="/privacy-policy"
-                  style={{ fontSize: "12px" }}
-                >
-                  Privacy Policy
-                </a>
-              </Col> */}
-            </Row>
-          </div>
+          <div className="d-flex justify-content-center container"></div>
         </Container>
         <Container fluid>
           <Row className="d-flex align-items-center">

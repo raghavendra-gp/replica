@@ -28,36 +28,19 @@
   font-size: 7vh;
   align-items: center;
   text-align: center;
-  /* color: #e9b820; */
-  color: #468b97;
+
+  color: #b70404;
+  /* color: #3d0c11; */
 }
 
 .title_para {
-  font-family: "Sofia Sans Condensed", sans-serif !important  ;
+  font-family: "Ubuntu", sans-serif !important  ;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
+  font-size: larger !important;
   font-size: 3vh;
-  color: #3c2400;
-}
-
-.saffron {
-  height: 18vh;
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
-  background-color: #ff5722;
-  /* border-top-right-radius: 5px; */
-  border-top-left-radius: 50px;
-}
-
-.green {
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
-  height: 18vh;
-  background-color: #004d00;
-  /* border-bottom-left-radius: 5px; */
-  border-bottom-right-radius: 50px;
+  color: #c70039;
+  /* color: #3c2400; */
 }
 
 .uploadBox {

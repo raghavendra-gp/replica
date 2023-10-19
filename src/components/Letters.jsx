@@ -3,11 +3,15 @@ import { Card, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 import { storage } from "./Firebase";
 import { getDownloadURL, listAll, ref } from "firebase/storage";
 import { Button, CircularProgress } from "@mui/material";
+import HorizontalLine from "../reusables/HorizontalLine";
+import Modal from "@mui/material/Modal";
 
 const Letters = () => {
   const [imageURLs, setImageURLs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState(""); // Step 1
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const storageRef = ref(storage, "images/");
@@ -30,47 +34,67 @@ const Letters = () => {
     window.history.back();
   };
 
+  const handleImageClick = (url) => {
+    setSelectedImage(url);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const filteredImages = imageURLs.filter((url) => {
-    // Step 3
-    const fileNameWithExtension = url.substring(url.lastIndexOf("/") + 1);
-    const fileName = fileNameWithExtension.substring(
-      0,
-      fileNameWithExtension.indexOf(".")
+    const decodedUrl = decodeURIComponent(url);
+    const fileNameWithExtension = decodedUrl.substring(
+      decodedUrl.lastIndexOf("/") + 1
     );
+    const fileName = fileNameWithExtension
+      .replace(/^.*[\\/]/, "")
+      .split(".")[0];
     return fileName.toLowerCase().includes(searchQuery.toLowerCase());
   });
 
   return (
     <>
       <Container className="py-5">
-        <Row className="justify-content-center">
-          <Col md={6} lg={4} className="mb-2">
-            {" "}
-            {/* Added className */}
+        <Row className="justify-content-center align-items-center">
+          <Col
+            xs="12"
+            lg="2"
+            className="mb-3 mb-lg-0 text-center  d-none d-lg-block"
+          >
             <Button
               variant="contained"
               onClick={handleBackToHome}
               className="d-flex align-items-center justify-content-center"
-              style={{ backgroundColor: "#06038D", width: "100%" }}
+              style={{
+                backgroundColor: "#CD6688",
+                width: "100%",
+                height: "auto",
+              }}
             >
               <i className="fa-solid fa-arrow-left fa-shake fa-lg me-2"></i>
-              Back To Home
+              Back
             </Button>
           </Col>
-          <Col md={6} lg={4}>
+          <Col xs="12" lg="8" className="mb-3 mb-lg-0">
             <InputGroup>
               <Form.Control
                 type="text"
                 placeholder="Search..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                style={{
+                  width: "100%",
+                  borderTopLeftRadius: "10px",
+                }}
               />
-              <Button variant="outline-secondary">Search</Button>
             </InputGroup>
           </Col>
         </Row>
       </Container>
 
+      <HorizontalLine />
       <Container className="py-5">
         {loading ? (
           <div style={{ textAlign: "center" }}>
@@ -80,30 +104,45 @@ const Letters = () => {
           <Row xs={1} md={2} lg={3} className="g-4">
             {filteredImages.length > 0 ? (
               filteredImages.map((url, index) => {
-                const fileNameWithExtension = url.substring(
-                  url.lastIndexOf("/") + 1
+                const decodedUrl = decodeURIComponent(url);
+                const fileNameWithExtension = decodedUrl.substring(
+                  decodedUrl.lastIndexOf("/") + 1
                 );
-                const fileName = fileNameWithExtension.substring(
-                  0,
-                  fileNameWithExtension.indexOf(".")
-                );
+                const fileName = fileNameWithExtension
+                  .replace(/^.*[\\/]/, "")
+                  .split(".")[0];
                 return (
                   <Col key={index}>
                     <Card
                       style={{
-                        height: "300px",
+                        height: "250px",
                         borderRadius: "20px",
                         overflow: "hidden",
                       }}
                     >
-                      <div style={{ height: "200px", overflow: "hidden" }}>
+                      <div
+                        style={{ height: "200px", overflow: "hidden" }}
+                        onClick={() => handleImageClick(url)}
+                      >
                         <Card.Img
                           variant="top"
                           src={url}
-                          style={{ width: "100%", objectFit: "cover" }}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                          }}
+                          // style={{ width: "100%", objectFit: "fill" }}
                         />
                       </div>
-                      <Card.Body>
+                      <Card.Body
+                        style={{
+                          backgroundColor: "#FF9B9B",
+                          // backgroundColor: "#765827",
+                          height: "2rem",
+                          textAlign: "center",
+                        }}
+                      >
                         <Card.Title>{fileName}</Card.Title>
                       </Card.Body>
                     </Card>
@@ -111,11 +150,31 @@ const Letters = () => {
                 );
               })
             ) : (
-              <div style={{ textAlign: "center" }}>Image not found</div> // step 4
+              <div style={{ textAlign: "center" }}>Letter not found</div>
             )}
           </Row>
         )}
       </Container>
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "transparent", // Set the modal background color to transparent
+          backdropFilter: "blur(5px)",
+        }}
+      >
+        <img
+          src={selectedImage}
+          alt="Selected"
+          style={{ width: "90vw", maxWidth: "800px" }} // Adjusted size
+        />
+      </Modal>
     </>
   );
 };

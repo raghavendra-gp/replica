@@ -53,9 +53,7 @@ const SubContent = () => {
         <HorizontalLine />
         {/* -----------------------file upload----------------------------- */}
         <Container className="py-5 fadeInOnScroll">
-          {/* <div className={`${MainCss.saffron}`}></div> */}
           <FileUpload />
-          {/* <div className={`${MainCss.green}`}></div> */}
         </Container>
 
         {/* ----------------------end file upload--------------------------- */}
@@ -75,23 +73,12 @@ const SubContent = () => {
                 allowfullscreen
                 style={{ borderRadius: "10px" }}
               ></iframe>
-              {/* <video
-                width="100%"
-                height="315"
-                controls
-                src="../videos/armyMan.mp4"
-                type="video/MP4"
-                title="My Video"
-                style={{ borderRadius: "10px" }}
-              >
-                {/* <source src="../" type="video/mp4"></source> */}
-              {/* </video> */}
             </Col>
             <VerticalLine />
             <Col sm={12} lg={5} className="d-flex align-items-center">
               <div className="text-center">
-                <h3 className="my-4">Life In Army</h3>
-                <p>
+                <h3 className={`${MainCss.title} + my-4`}>Life In Army</h3>
+                <p className={`${MainCss.title_para}`}>
                   Your arms are my shelter, Assuring me that it will be better.
                   Your hand in my comfort, Lifting me up when I fall short. Your
                   voice make me strong, Teaching me what’s right and wrong. Your

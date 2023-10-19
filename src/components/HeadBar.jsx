@@ -12,13 +12,12 @@ const HeadBar = () => {
     });
   };
 
-  const scrollToHome = () => {};
   return (
     <Fragment>
       <Navbar
         expand="lg"
         data-bs-theme="dark"
-        style={{ backgroundColor: "#CD5C08" }}
+        style={{ backgroundColor: "#CD6688" }}
         className={`${HeadBarCss.sticky_top}`}
       >
         <Navbar.Brand href="#home">
