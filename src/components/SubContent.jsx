@@ -98,19 +98,23 @@ const SubContent = () => {
           style={{ textAlign: "center" }}
         >
           <Row className="justify-content-center">
-            <Col xs={12} md={8}>
+            <Col sm={12} lg={8}>
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe
+                  width="100%"
+                  height="340"
                   className="embed-responsive-item"
                   src="https://www.youtube.com/embed/3t5M10gBVCc?si=_yIRk874r0IaIrf0&amp;controls=0"
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
+                  style={{ borderRadius: "10px" }}
                 ></iframe>
               </div>
             </Col>
           </Row>
         </Container>
+
         {/* /-------------------------------army video end------------------------------/ */}
       </div>
     </Fragment>
