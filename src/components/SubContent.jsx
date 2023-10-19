@@ -97,20 +97,19 @@ const SubContent = () => {
           className="py-5 fadeInOnScroll"
           style={{ textAlign: "center" }}
         >
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/3t5M10gBVCc?si=_yIRk874r0IaIrf0&amp;controls=0"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            style={{
-              width: "80%",
-              borderRadius: "30px",
-              height: "70vh",
-            }}
-          ></iframe>
+          <Row className="justify-content-center">
+            <Col xs={12} md={8}>
+              <div className="embed-responsive embed-responsive-16by9">
+                <iframe
+                  className="embed-responsive-item"
+                  src="https://www.youtube.com/embed/3t5M10gBVCc?si=_yIRk874r0IaIrf0&amp;controls=0"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </Col>
+          </Row>
         </Container>
         {/* /-------------------------------army video end------------------------------/ */}
       </div>

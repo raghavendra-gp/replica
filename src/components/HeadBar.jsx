@@ -20,7 +20,7 @@ const HeadBar = () => {
         style={{ backgroundColor: "#CD6688" }}
         className={`${HeadBarCss.sticky_top}`}
       >
-        <Navbar.Brand href="#home">
+        <Navbar.Brand>
           <img
             className={`${HeadBarCss.navImg}`}
             src={logo}
@@ -30,24 +30,23 @@ const HeadBar = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <div className="d-inline-flex align-items-end ms-auto">
-            <Nav className="me-auto">
-              <Nav.Link
-                className={`${HeadBarCss.navLinks}`}
-                href="#home"
-                onClick={scrollToTop}
-              >
-                Home
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="/letters"
-                className={`${HeadBarCss.navLinks}`}
-              >
-                Letters
-              </Nav.Link>
-            </Nav>
-          </div>
+          <Nav className="ms-auto">
+            {" "}
+            {/* Use ms-auto to push the links to the right */}
+            <Nav.Link
+              className={`mx-auto mx-lg-0 ${HeadBarCss.navLinks}`}
+              onClick={scrollToTop}
+            >
+              Home
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/letters"
+              className={`mx-auto mx-lg-0 ${HeadBarCss.navLinks}`}
+            >
+              Letters
+            </Nav.Link>
+          </Nav>
         </Navbar.Collapse>
       </Navbar>
     </Fragment>

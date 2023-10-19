@@ -5,6 +5,7 @@ import { getDownloadURL, listAll, ref } from "firebase/storage";
 import { Button, CircularProgress } from "@mui/material";
 import HorizontalLine from "../reusables/HorizontalLine";
 import Modal from "@mui/material/Modal";
+import MainCss from "../css/MainCss.module.css";
 
 const Letters = () => {
   const [imageURLs, setImageURLs] = useState([]);
@@ -57,6 +58,13 @@ const Letters = () => {
   return (
     <>
       <Container className="py-5">
+        <Row className="justify-content-center">
+          <Col xs={12} md={8} className="text-center">
+            <h2 className={`${MainCss.title}`}>Letters Of Compassionate</h2>
+          </Col>
+        </Row>
+      </Container>
+      <Container>
         <Row className="justify-content-center align-items-center">
           <Col
             xs="12"
@@ -132,13 +140,11 @@ const Letters = () => {
                             height: "100%",
                             objectFit: "cover",
                           }}
-                          // style={{ width: "100%", objectFit: "fill" }}
                         />
                       </div>
                       <Card.Body
                         style={{
                           backgroundColor: "#FF9B9B",
-                          // backgroundColor: "#765827",
                           height: "2rem",
                           textAlign: "center",
                         }}
@@ -150,7 +156,13 @@ const Letters = () => {
                 );
               })
             ) : (
-              <div style={{ textAlign: "center" }}>Letter not found</div>
+              <Container className="d-flex justify-content-center align-items-center ">
+                <div>
+                  <div className={`${MainCss.title_para} + text-center`}>
+                    Letters not found😢
+                  </div>
+                </div>
+              </Container>
             )}
           </Row>
         )}
@@ -165,14 +177,14 @@ const Letters = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "transparent", // Set the modal background color to transparent
+          backgroundColor: "transparent",
           backdropFilter: "blur(5px)",
         }}
       >
         <img
           src={selectedImage}
           alt="Selected"
-          style={{ width: "90vw", maxWidth: "800px" }} // Adjusted size
+          style={{ width: "90vw", maxWidth: "800px" }}
         />
       </Modal>
     </>

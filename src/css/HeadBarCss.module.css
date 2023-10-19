@@ -1,12 +1,10 @@
 .navLinks {
-  /* padding-right: 2rem !important;
-  padding-left: 2rem !important; */
-  margin-right: 3rem;
-  /* padding-left: 2.125rem !important; */
+  padding-right: 2.5rem !important;
+  /* padding-left: 5rem !important;
+  margin-right: 3rem; */
   line-height: 1.5;
   color: #fff !important;
-  position: relative;
-  /* font-weigh; */
+  position: relative !important;
   font-size: 18px !important;
   font-family: "Sofia Sans Condensed", sans-serif !important;
 }
