@@ -137,6 +137,7 @@ const Letters = () => {
                         borderRadius: "20px",
                         overflow: "hidden",
                       }}
+                      onContextMenu={(e) => e.preventDefault()}
                     >
                       <div
                         style={{ height: "200px", overflow: "hidden" }}
@@ -151,6 +152,7 @@ const Letters = () => {
                             objectFit: "cover",
                             cursor: "pointer",
                           }}
+                          onContextMenu={(e) => e.preventDefault()}
                         />
                       </div>
                       <Card.Body
@@ -159,6 +161,7 @@ const Letters = () => {
                           height: "2rem",
                           textAlign: "center",
                         }}
+                        onContextMenu={(e) => e.preventDefault()}
                       >
                         <Card.Title>{fileName}</Card.Title>
                       </Card.Body>
@@ -192,12 +195,14 @@ const Letters = () => {
           backdropFilter: "blur(5px)",
           cursor: "pointer",
         }}
+        onContextMenu={(e) => e.preventDefault()}
       >
         <div
           style={{
             transform: `scale(${zoomLevel})`,
             transition: "transform 0.1s ease",
           }}
+          onContextMenu={(e) => e.preventDefault()}
           onWheel={(e) => {
             e.preventDefault(); // Prevent scrolling the page
             if (e.deltaY < 0) {
@@ -211,6 +216,7 @@ const Letters = () => {
             src={selectedImage}
             alt="Selected"
             style={{ width: "90vw", maxWidth: "800px" }}
+            onContextMenu={(e) => e.preventDefault()}
           />
         </div>
       </Modal>
