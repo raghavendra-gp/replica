@@ -139,6 +139,7 @@ const Letters = () => {
                             width: "100%",
                             height: "100%",
                             objectFit: "cover",
+                            cursor: "pointer",
                           }}
                         />
                       </div>
@@ -179,6 +180,7 @@ const Letters = () => {
           alignItems: "center",
           backgroundColor: "transparent",
           backdropFilter: "blur(5px)",
+          cursor: "pointer",
         }}
       >
         <img
