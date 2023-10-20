@@ -196,10 +196,10 @@ const Letters = () => {
         <div
           style={{
             transform: `scale(${zoomLevel})`,
-            transition: "transform 0.3s ease",
+            transition: "transform 0.1s ease",
           }}
           onWheel={(e) => {
-            e.preventDefault();
+            e.preventDefault(); // Prevent scrolling the page
             if (e.deltaY < 0) {
               handleZoomIn();
             } else {
