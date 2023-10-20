@@ -6,6 +6,7 @@ import { Button, CircularProgress } from "@mui/material";
 import HorizontalLine from "../reusables/HorizontalLine";
 import Modal from "@mui/material/Modal";
 import MainCss from "../css/MainCss.module.css";
+import { Link } from "react-router-dom";
 
 const Letters = () => {
   const [imageURLs, setImageURLs] = useState([]);
@@ -13,6 +14,7 @@ const Letters = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
   const [open, setOpen] = useState(false);
+  const [zoomLevel, setZoomLevel] = useState(1);
 
   useEffect(() => {
     const storageRef = ref(storage, "images/");
@@ -31,13 +33,20 @@ const Letters = () => {
       });
   }, []);
 
-  const handleBackToHome = () => {
-    window.history.back();
-  };
-
   const handleImageClick = (url) => {
     setSelectedImage(url);
+    setZoomLevel(1); // Reset zoom level when a new image is selected
     setOpen(true);
+  };
+
+  const handleZoomIn = () => {
+    setZoomLevel(zoomLevel + 0.1);
+  };
+
+  const handleZoomOut = () => {
+    if (zoomLevel > 0.8) {
+      setZoomLevel(zoomLevel - 0.1);
+    }
   };
 
   const handleClose = () => {
@@ -71,19 +80,20 @@ const Letters = () => {
             lg="2"
             className="mb-3 mb-lg-0 text-center  d-none d-lg-block"
           >
-            <Button
-              variant="contained"
-              onClick={handleBackToHome}
-              className="d-flex align-items-center justify-content-center"
-              style={{
-                backgroundColor: "#CD6688",
-                width: "100%",
-                height: "auto",
-              }}
-            >
-              <i className="fa-solid fa-arrow-left fa-shake fa-lg me-2"></i>
-              Back
-            </Button>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <Button
+                variant="contained"
+                className="d-flex align-items-center justify-content-center"
+                style={{
+                  backgroundColor: "#CD6688",
+                  width: "100%",
+                  height: "auto",
+                }}
+              >
+                <i className="fa-solid fa-arrow-left fa-shake fa-lg me-2"></i>
+                Back
+              </Button>
+            </Link>
           </Col>
           <Col xs="12" lg="8" className="mb-3 mb-lg-0">
             <InputGroup>
@@ -183,11 +193,26 @@ const Letters = () => {
           cursor: "pointer",
         }}
       >
-        <img
-          src={selectedImage}
-          alt="Selected"
-          style={{ width: "90vw", maxWidth: "800px" }}
-        />
+        <div
+          style={{
+            transform: `scale(${zoomLevel})`,
+            transition: "transform 0.3s ease",
+          }}
+          onWheel={(e) => {
+            e.preventDefault();
+            if (e.deltaY < 0) {
+              handleZoomIn();
+            } else {
+              handleZoomOut();
+            }
+          }}
+        >
+          <img
+            src={selectedImage}
+            alt="Selected"
+            style={{ width: "90vw", maxWidth: "800px" }}
+          />
+        </div>
       </Modal>
     </>
   );

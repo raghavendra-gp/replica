@@ -10,20 +10,31 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<MainContent />} />
+        {/* <Route path="/" element={<MainContent />} /> */}
+        <Route
+          path="/"
+          element={
+            <>
+              <HeadBar />
+              <CarouselPage />
+              <SubContent />
+              <Footer />
+            </>
+          }
+        />
         <Route path="/letters" element={<Letters />} />
       </Routes>
     </div>
   );
 }
 
-const MainContent = () => (
-  <>
-    <HeadBar />
-    <CarouselPage />
-    <SubContent />
-    <Footer />
-  </>
-);
+// const MainContent = () => (
+//   <>
+//     <HeadBar />
+//     <CarouselPage />
+//     <SubContent />
+//     <Footer />
+//   </>
+// );
 
 export default App;
