@@ -44,7 +44,7 @@ const Letters = () => {
   };
 
   const handleZoomOut = () => {
-    if (zoomLevel > 0.8) {
+    if (zoomLevel > 1) {
       setZoomLevel(zoomLevel - 0.1);
     }
   };
@@ -215,7 +215,7 @@ const Letters = () => {
           <img
             src={selectedImage}
             alt="Selected"
-            style={{ width: "90vw", maxWidth: "800px" }}
+            style={{ width: "70vh", maxWidth: "800px" }}
             onContextMenu={(e) => e.preventDefault()}
           />
         </div>
