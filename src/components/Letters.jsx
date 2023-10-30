@@ -214,7 +214,7 @@ const Letters = () => {
         >
           <img
             src={selectedImage}
-            alt="Selected"
+            alt="Selected image"
             style={{ width: "70vh", maxWidth: "800px" }}
             onContextMenu={(e) => e.preventDefault()}
           />
